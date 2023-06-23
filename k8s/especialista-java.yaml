@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: especialista-java
+spec:
+  selector:
+    matchLabels:
+      app: especialista-java
+  template:
+    metadata:
+      labels:
+        app: especialista-java
+    spec:
+      containers:
+        - name: especialista-java
+          image: especialista-java
+          resources:
+            requests:
+              cpu: "0.5"
+              memory: 512Mi
+            limits:
+              cpu: "0.5"
+              memory: 1Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: especialista-java
+  annotations:
+    ingress.kubernetes.io/service-upstream: "true"
+  labels:
+    app: especialista-java
+    language: java
+spec:
+  type: LoadBalancer
+  selector:
+    app: especialista-java
+  ports:
+    - name: http
+      port: 80
