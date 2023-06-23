@@ -1,0 +1,5 @@
+FROM eclipse-temurin:17.0.5_8-jdk-alpine
+
+WORKDIR /app
+
+CMD [ "tail",  "-f", "/dev/null"]
