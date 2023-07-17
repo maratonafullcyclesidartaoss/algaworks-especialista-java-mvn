@@ -2,7 +2,6 @@ package com.especialistajava.classesseladas;
 
 import com.especialistajava.classesseladas.loja.Checkout;
 import com.especialistajava.classesseladas.pagamento.CartaoDeCredito;
-import com.especialistajava.classesseladas.pagamento.Dinheiro;
 import com.especialistajava.classesseladas.pagamento.Pix;
 
 import java.math.BigDecimal;
