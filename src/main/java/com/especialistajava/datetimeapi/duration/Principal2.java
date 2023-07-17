@@ -1,0 +1,23 @@
+package com.especialistajava.datetimeapi.duration;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
+public class Principal2 {
+
+    public static void main(String[] args) {
+        LocalDateTime dataHoraCompra = LocalDateTime.parse("2023-07-10T21:30:00");
+        LocalDateTime dataHoraEntrega = LocalDateTime.parse("2023-07-10T22:10:10");
+
+        Duration tempoEntrega = Duration.between(dataHoraCompra, dataHoraEntrega);
+
+        System.out.println(tempoEntrega);
+
+//        long tempoEntregaSegundos = dataHoraCompra.until(dataHoraEntrega, ChronoUnit.SECONDS);
+
+            long tempoEntregaSegundos = ChronoUnit.SECONDS.between(dataHoraCompra, dataHoraEntrega);
+
+        System.out.println(tempoEntregaSegundos);
+    }
+}
